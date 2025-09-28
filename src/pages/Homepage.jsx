@@ -12,14 +12,10 @@ export default function Homepage() {
           Star Craft 2 Scrub!
         </h1>
         <h2 className="text-3xl text-center mb-8">Have fun and improve</h2>
-
-        <div className="flex flex-row justify-between gap-40 mb-20">
-          <Showcase data={SHOWCASE_DATA.Track}></Showcase>
-          <Showcase data={SHOWCASE_DATA.Cast}></Showcase>
-        </div>
-        <div className="flex flex-row justify-between gap-40">
-          <Showcase data={SHOWCASE_DATA.Best}></Showcase>
-          <Showcase data={SHOWCASE_DATA.Cheese}></Showcase>
+        <div className="flex flex-col gap-20">
+          {SHOWCASE_DATA.map((item) => (
+            <Showcase key={item.key} data={item} />
+          ))}
         </div>
       </div>
     </div>

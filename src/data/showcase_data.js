@@ -1,7 +1,7 @@
 import trackImage from "../assets/track.jpg";
 import castImage from "../assets/cast.webp";
 import bestImage from "../assets/best.avif";
-import cheeseImage from "../assets/cheese.avif";
+import cheeseImage from "../assets/cheese.jpg";
 
 export const SHOWCASE_DATA = {
   Track: {

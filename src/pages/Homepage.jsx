@@ -14,7 +14,7 @@ export default function Homepage() {
         <h2 className="text-3xl text-center mb-8">Have fun and improve</h2>
 
         <div className="flex flex-row justify-between gap-40 mb-20">
-          <Showcase data={SHOWCASE_DATA.Track}>Showcase</Showcase>
+          <Showcase data={SHOWCASE_DATA.Track}></Showcase>
           <Showcase data={SHOWCASE_DATA.Cast}></Showcase>
         </div>
         <div className="flex flex-row justify-between gap-40">

@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import NavbarButton from "./NavbarButton";
 
 export default function Navbar() {
-  const linkArray = [
+  const navbarArray = [
     { name: "Home", link: "/" },
     { name: "Profile", link: "/Profile" },
     { name: "Track progress", link: "/Track" },
@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-1/2 -translate-x-1/2 ">
       <div className="flex  justify-evenly space-x-6">
-        {linkArray.map(({ name, link }) => {
+        {navbarArray.map(({ name, link }) => {
           return (
             <NavbarButton key={link} link={link}>
               {name}

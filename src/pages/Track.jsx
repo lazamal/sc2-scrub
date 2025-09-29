@@ -5,19 +5,19 @@ export default function Track() {
     "Build name",
     "Target hit benchmark",
     "Best time hit",
-    "map",
+    "Map name",
     "W/L ratio",
     "Cheese rating",
     "Standard rating",
   ];
   return (
-    <div className="min-h-screen">
+    <div className="h-screen">
       <Navbar />
 
       <div className="pt-6 flex flex-row gap-20">
-        {progressTable.map((headline, index) => {
+        {progressTable.map((headline) => {
           return (
-            <p className="text-white font-semibold" key={index}>
+            <p className="text-white font-semibold" key={headline}>
               {headline}
             </p>
           );

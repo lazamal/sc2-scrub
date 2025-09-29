@@ -1,4 +1,6 @@
 import Navbar from "../components/Navbar";
+import SingleBuild from "../components/SingleBuild";
+import { BUILD_DATA } from "../data/build_data";
 
 export default function Track() {
   const progressTable = [
@@ -10,11 +12,12 @@ export default function Track() {
     "Cheese rating",
     "Standard rating",
   ];
+
   return (
     <div className="h-screen">
       <Navbar />
 
-      <div className="pt-6 flex flex-row gap-20">
+      <div className="pt-6 grid grid-cols-7 gap-6 ">
         {progressTable.map((headline) => {
           return (
             <p className="text-white font-semibold" key={headline}>
@@ -22,6 +25,10 @@ export default function Track() {
             </p>
           );
         })}
+
+        {BUILD_DATA.map((singleBuildData) => (
+          <SingleBuild key={singleBuildData.id} data={singleBuildData} />
+        ))}
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function SingleBuild({ data }) {
   const {
     id,
@@ -19,6 +21,8 @@ export default function SingleBuild({ data }) {
     cheeseRating,
     standardRating,
   ];
+
+  const [editedValue, setEditedValue] = useState(dataArray);
 
   return (
     <>

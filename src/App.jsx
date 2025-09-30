@@ -7,6 +7,7 @@ import MyBest from "./pages/MyBest";
 import Profile from "./pages/Profile";
 import Cheese from "./pages/Cheese";
 import Track from "./pages/Track";
+import { GetEmoji } from "./components/GetEmoji";
 
 function App() {
   return (
@@ -18,8 +19,9 @@ function App() {
           <Route path="MyBest" element={<MyBest />} />
           <Route path="Profile" element={<Profile />} />
           <Route path="Cheese" element={<Cheese />} />
-          // <Route path="Track" element={<Track />} />
+          <Route path="Track" element={<Track />} />
           <Route path="*" element={<Page404 />} />
+          <Route path="getEmoji" element={<GetEmoji />} />
         </Routes>
       </BrowserRouter>
     </>

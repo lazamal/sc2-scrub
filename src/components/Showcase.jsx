@@ -2,6 +2,7 @@ import { Link } from "react-router";
 
 export default function Showcase({ data }) {
   const { key, title, description, img, buttonLink } = data;
+
   return (
     <span className="flex flex-col w-3xl h-80 bg-blue-950">
       <h2 className="text-4xl pb-2">{title}</h2>

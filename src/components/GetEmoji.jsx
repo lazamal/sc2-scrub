@@ -6,7 +6,7 @@ const httpClient = axios.create();
 
 export const GetEmoji = () => {
   const [emojiesResults, setEmojiesResults] = useState([]);
-  const [searchText, setsearchText] = useState("a");
+  const [searchText, setsearchText] = useState("");
 
   const searchEmojis = () => {
     httpClient

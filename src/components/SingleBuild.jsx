@@ -22,21 +22,18 @@ export default function SingleBuild({ data }) {
     standardRating,
   ];
 
-  const [editedValue, setEditedValue] = useState(dataArray);
-
   return (
-    <>
+    <div className="grid grid-cols-7 border-b border-gray-700 pb-2 col-span-8 gap-6">
       {dataArray.map((value) => {
-        return <input type="text" key={`${id}-${value}`} placeholder={value} />;
+        return (
+          <input
+            type="text"
+            key={`${id}+${value}`}
+            placeholder={value}
+            className=""
+          />
+        );
       })}
-
-      {/* <input type="text" placeholder={buildName} />
-      <input type="text" placeholder={benchmark} />
-      <input type="text" placeholder={bestTIme} />
-      <input type="text" placeholder={mapName} />
-      <input type="text" placeholder={wlRatio} />
-      <input type="text" placeholder={cheeseRating} />
-      <input type="text" placeholder={standardRating} /> */}
-    </>
+    </div>
   );
 }

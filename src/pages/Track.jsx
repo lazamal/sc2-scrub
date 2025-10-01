@@ -29,16 +29,12 @@ export default function Track() {
     setTotalBuilds([...totalBuilds, BUILD_DATA[0]]);
   }
 
-  function saveBuild() {
-    // need to figure out how can i recieve data from the input element inside the component
-  }
-
   return (
     <div className="h-screen">
       <Navbar />
       <div className="container pt-6">
         {/* header row */}
-        <div className="pt-6 grid grid-cols-7 gap-6 ">
+        <div className="pt-6 grid grid-cols-8 gap-6 ">
           {progressHeadlines.map((headline) => {
             return (
               <p className="text-white font-semibold" key={headline}>
@@ -53,15 +49,7 @@ export default function Track() {
             <SingleBuild key={data.id} data={data} />
           ))}
         </div>
-        <div className="flex flex-row-reverse justify-evenly ">
-          <button
-            className="mt-4"
-            onClick={() => {
-              saveBuild();
-            }}
-          >
-            Save
-          </button>
+        <div className="">
           <button
             className="mt-4"
             onClick={() => {

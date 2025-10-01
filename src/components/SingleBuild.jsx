@@ -22,6 +22,8 @@ export default function SingleBuild({ data }) {
     standardRating,
   ];
 
+  const [inputToUpdate, setInputToUpdate] = useState({});
+
   return (
     <div className="grid grid-cols-7 border-b border-gray-700 pb-2 col-span-8 gap-6">
       {dataArray.map((value) => {

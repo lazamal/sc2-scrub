@@ -6,6 +6,15 @@ import { BUILD_DATA } from "../data/build_data";
 export default function Track() {
   const [totalBuilds, setTotalBuilds] = useState([]);
 
+  // המשתמש מקבל כפתור: הוסף שורה לטבלה
+  // לחיצה על הכפתור נותנת למשתמש שורה של Input fields
+  // המשתמש ממלא input fields
+  // המשתמש לוחץ שמירה
+  // המידע נשמר בDB המעפן שלי
+  // השדות משתנים מinput למשהו קבוע יותר
+  // המשתמש יכול להוסיף שורות חדשות עם הכפתור הוסף שורה לטבלה
+  // בהמשך - עדכון ערכים קיימים
+
   const progressHeadlines = [
     "Build name",
     "Target hit benchmark",
@@ -17,9 +26,11 @@ export default function Track() {
   ];
 
   function addBuild() {
-    console.log("added build");
     setTotalBuilds([...totalBuilds, BUILD_DATA[0]]);
-    console.log(totalBuilds);
+  }
+
+  function saveBuild() {
+    // need to figure out how can i recieve data from the input element inside the component
   }
 
   return (
@@ -36,19 +47,31 @@ export default function Track() {
             );
           })}
         </div>
-        {/* data rows */}
+        {/* Build order rows */}
         <div className="mt-4 space-y-4">
-          {BUILD_DATA.map((singleBuildData) => (
-            <SingleBuild key={singleBuildData.id} data={singleBuildData} />
-          ))}
-          {totalBuilds.map((newBuildData) => (
-            <SingleBuild key={newBuildData.id} data={newBuildData} />
+          {totalBuilds.map((data) => (
+            <SingleBuild key={data.id} data={data} />
           ))}
         </div>
+        <div className="flex flex-row-reverse justify-evenly ">
+          <button
+            className="mt-4"
+            onClick={() => {
+              saveBuild();
+            }}
+          >
+            Save
+          </button>
+          <button
+            className="mt-4"
+            onClick={() => {
+              addBuild();
+            }}
+          >
+            Add build
+          </button>
+        </div>
       </div>
-      <button className="mt-5" onClick={() => addBuild()}>
-        Add Build Order
-      </button>
     </div>
   );
 }

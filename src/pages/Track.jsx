@@ -29,7 +29,7 @@ export default function Track() {
   function addBuild() {
     const emptyBuild = {
       id: newId,
-      buildName: "New build bane",
+      buildName: "New build",
       benchmark: "New benchmark",
       bestTIme: "New best time",
       mapName: "new map",

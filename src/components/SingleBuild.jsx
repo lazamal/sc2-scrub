@@ -11,7 +11,7 @@ export default function SingleBuild({ data }) {
     cheeseRating,
     standardRating,
   } = data;
-
+  // question for chen, should i save data array as a state?
   const dataArray = [
     buildName,
     benchmark,
@@ -22,23 +22,35 @@ export default function SingleBuild({ data }) {
     standardRating,
   ];
 
-  const [saveSingleBuild, setSaveSinbleBuild] = useState({});
+  const [saveInput, setSaveInput] = useState(dataArray);
+  // lesson 81 on udemy course - update state immutably
+  function handleinputs(newValue, index) {
+    setSaveInput((prev) => {
+      const updatedBuildData = [...prev];
 
+      updatedBuildData[index] = newValue;
+
+      return updatedBuildData;
+    });
+  }
+  // lesson 82 on udemy course - lifting state up
   function saveBuild() {
-    // need to figure out how can i recieve data from the input element inside the component
-    // watch lesson 81 in the udemy course! he is doing exacly that
-    console.log(`Save the input fields of ${id}`);
+    console.log(saveInput);
   }
 
   return (
     <div className="grid grid-cols-8 border-b border-gray-700 pb-2 col-span-8 gap-6">
-      {dataArray.map((value) => {
+      {dataArray.map((value, index) => {
         return (
           <input
             type="text"
             key={`${id}+${value}`}
             placeholder={value}
             className=""
+            onChange={(event) => {
+              const newValue = event.target.value;
+              handleinputs(newValue, index);
+            }}
           />
         );
       })}

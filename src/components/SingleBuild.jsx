@@ -22,13 +22,12 @@ export default function SingleBuild({ data }) {
     standardRating,
   ];
 
-  const [inputToUpdate, setInputToUpdate] = useState({});
+  const [saveSingleBuild, setSaveSinbleBuild] = useState({});
 
   function saveBuild() {
     // need to figure out how can i recieve data from the input element inside the component
     // watch lesson 81 in the udemy course! he is doing exacly that
     console.log(`Save the input fields of ${id}`);
-    setInputToUpdate();
   }
 
   return (

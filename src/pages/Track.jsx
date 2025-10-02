@@ -5,6 +5,7 @@ import { BUILD_DATA } from "../data/build_data";
 
 export default function Track() {
   const [totalBuilds, setTotalBuilds] = useState([]);
+  const [newId, setNewId] = useState(0);
 
   // המשתמש מקבל כפתור: הוסף שורה לטבלה
   // לחיצה על הכפתור נותנת למשתמש שורה של Input fields
@@ -26,7 +27,18 @@ export default function Track() {
   ];
 
   function addBuild() {
-    setTotalBuilds([...totalBuilds, BUILD_DATA[0]]);
+    const emptyBuild = {
+      id: newId,
+      buildName: "New build bane",
+      benchmark: "New benchmark",
+      bestTIme: "New best time",
+      mapName: "new map",
+      wlRatio: " new 10%",
+      cheeseRating: "new cheese",
+      standardRating: "new standard",
+    };
+
+    setTotalBuilds([...totalBuilds, emptyBuild]);
   }
 
   return (
@@ -54,6 +66,7 @@ export default function Track() {
             className="mt-4"
             onClick={() => {
               addBuild();
+              setNewId(newId + 1);
             }}
           >
             Add build

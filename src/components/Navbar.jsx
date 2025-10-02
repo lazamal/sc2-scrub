@@ -1,15 +1,15 @@
-import { Link } from "react-router";
 import NavbarButton from "./NavbarButton";
 
 export default function Navbar() {
   const navbarArray = [
-    { name: "Home", link: "/" },
+    { name: "Home", link: "/home" },
     { name: "Profile", link: "/Profile" },
     { name: "Track progress", link: "/Track" },
     { name: "Replay Cast", link: "/ReplayCast" },
     { name: "My Best", link: "/myBest" },
     { name: "Cheese", link: "/Cheese" },
     { name: "Emoji", link: "/getEmoji" },
+    { name: "ladder", link: "/ladder" },
   ];
 
   return (

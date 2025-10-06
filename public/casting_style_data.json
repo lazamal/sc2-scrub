@@ -1,0 +1,18 @@
+[
+  {
+    "styleName": "Funny",
+    "text": "The caster cracks jokes, makes playful banter, and adds humorous commentary to every battle. Expect witty quips, puns, and laugh-out-loud moments during the replay."
+  },
+  {
+    "styleName": "Serious",
+    "text": "The caster provides a calm, analytical breakdown of every move. Focus is on strategy, positioning, and decision-making, giving a professional and informative feel."
+  },
+  {
+    "styleName": "Dramatic",
+    "text": "The caster turns every engagement into a cinematic experience. Exciting narration, suspenseful pauses, and epic emphasis make the replay feel like a high-stakes showdown."
+  },
+  {
+    "styleName": "Casual",
+    "text": "The caster keeps it relaxed and friendly, chatting casually while highlighting interesting moments. Perfect for laid-back viewing and lighthearted commentary."
+  }
+]

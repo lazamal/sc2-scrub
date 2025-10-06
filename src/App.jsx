@@ -7,7 +7,7 @@ import MyBest from "./pages/MyBest";
 import Profile from "./pages/Profile";
 import Cheese from "./pages/Cheese";
 import Track from "./pages/Track";
-import { GetEmoji } from "./components/GetEmoji";
+import { GetEmoji } from "./pages/GetEmoji";
 
 function App() {
   const routeArray = [

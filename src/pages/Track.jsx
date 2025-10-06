@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import SingleBuild from "../components/SingleBuild";
 import { BUILD_DATA } from "../data/build_data";
+import { buttonStyle } from "../styles";
 
 export default function Track() {
   const [totalBuilds, setTotalBuilds] = useState([]);
@@ -63,7 +64,7 @@ export default function Track() {
         </div>
         <div className="">
           <button
-            className="mt-4"
+            className={`${buttonStyle} + mt-4`}
             onClick={() => {
               addBuild();
               setNewId(newId + 1);

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { buttonStyle } from "../styles";
 
 export default function SingleBuild({ data }) {
   const {
@@ -55,6 +56,7 @@ export default function SingleBuild({ data }) {
         );
       })}
       <button
+        className={buttonStyle}
         onClick={() => {
           saveBuild();
         }}

@@ -25,9 +25,14 @@ export default function ReplayTab() {
   }
 
   return (
-    <div className="bg-blue-800 w-200 h-150 flex justify-center items-center border-2">
-      <div className="flex-1 flex justify-center items-center">{tabText}</div>
-      <div className="flex flex-col items-end gap-4  pr-4">
+    <div className="bg-blue-800 w-200 h-150 flex flex-col justify-center items-center border-2 text-black">
+      <h2 className="text-3xl">
+        Choose what style you would like to have your replay cast
+      </h2>
+      <div className="flex-1 flex justify-center items-center text-2xl">
+        {tabText}
+      </div>
+      <div className="flex flex-row items-end gap-4  pr-4">
         {TabResults.map(({ styleName }, index) => {
           return (
             <ReplayTabButton

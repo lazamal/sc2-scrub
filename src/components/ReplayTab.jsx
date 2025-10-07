@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 import axios from "axios";
+import { replayTabStyle } from "../styles";
 
 const httpClient = axios.create();
 
@@ -25,7 +26,7 @@ export default function ReplayTab() {
   }
 
   return (
-    <div className="bg-blue-800 w-200 h-150 flex flex-col justify-center items-center border-2 text-black">
+    <div className={replayTabStyle}>
       <h2 className="text-3xl">
         Choose what style you would like to have your replay cast
       </h2>
@@ -43,10 +44,6 @@ export default function ReplayTab() {
             </ReplayTabButton>
           );
         })}
-        {/* <ReplayTabButton>Casting style</ReplayTabButton>
-        <ReplayTabButton>Casting style</ReplayTabButton>
-        <ReplayTabButton>Casting style</ReplayTabButton>
-        <ReplayTabButton>Casting style</ReplayTabButton> */}
       </div>
     </div>
   );

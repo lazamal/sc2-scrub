@@ -7,13 +7,13 @@ export default function Navbar() {
     { name: "Profile", link: "/Profile" },
     { name: "Track progress", link: "/Track" },
     { name: "Replay Cast", link: "/ReplayCast" },
-    { name: "My Best", link: "/myBest" },
+    { name: "My stats", link: "/myStats" },
     { name: "Cheese", link: "/Cheese" },
     { name: "Emoji", link: "/getEmoji" },
   ];
 
   return (
-    <nav className="fixed top-0 left-1/2 -translate-x-1/2 ">
+    <nav className="fixed top-0 left-1/2 -translate-x-1/2 min-w-max ">
       <div className="flex justify-evenly space-x-5">
         {navbarArray.map(({ name, link }) => {
           return (
@@ -25,16 +25,4 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
-
-{
-  /* swapped this code for the map */
-}
-{
-  /* <NavbarButton link="/">Home</NavbarButton>
-        <NavbarButton link="/Profile">Profile</NavbarButton>
-        <NavbarButton link="/Track">Track progress</NavbarButton>
-        <NavbarButton link="/ReplayCast">Replay Cast</NavbarButton>
-        <NavbarButton link="/MyBest">My Best</NavbarButton>
-        <NavbarButton link="/Cheese">Cheese</NavbarButton> */
 }

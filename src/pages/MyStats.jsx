@@ -8,8 +8,8 @@ import { useState } from "react";
 
 export default function MyStats() {
   const [radarClick, setRadarClick] = useState("");
-  const [goalValues, setGoalValues] = useState([120, 98, 86, 99, 85, 65]);
-  const [currentValues, setCurrentValues] = useState([10, 20, 30, 40, 50, 60]);
+  const [goalValues, setGoalValues] = useState([20, 20, 10, 10, 10, 10]);
+  const [currentValues, setCurrentValues] = useState([]);
   const metrics = [
     "Agression",
     "Build Strategy",
@@ -32,35 +32,44 @@ export default function MyStats() {
     fetchPlayerData();
   }, []);
 
-  function HandleGoalForm() {
-    console.log("form changed");
-  }
-
   return (
     <>
       <Navbar />
-      {console.log(currentValues)}
       <div className="flex flex-col justify-center">
         <h1 className="">My Stats</h1>
         <h2 className="text-3xl mb-10 pt-5">Choose a skill to improve</h2>
         <div className="flex flex-row items-center gap-70">
           <form
-            className="flex flex-col"
+            className="flex flex-col bg-cyan-800 rounded-3xl p-10"
             action=""
-            onChange={() => HandleGoalForm()}
           >
-            {currentValues.map((index) => {
+            <h2 className="text-3xl pb-10"> Goal Form</h2>
+            {goalValues.map((value, index) => {
               return (
-                <>
-                  <label>{metrics[index]}</label>
-                  <input key={index} label="name" type="range" />;
-                </>
+                <div
+                  key={index}
+                  className="flex flex-row justify-around gap-10 pb-5"
+                >
+                  <label className="mr-4">{metrics[index]}</label>
+                  <input
+                    id={metrics[index]}
+                    min="0"
+                    max="120"
+                    type="range"
+                    value={value}
+                    onChange={(event) => {
+                      const newValues = [...goalValues];
+                      newValues[index] = Number(event.target.value);
+                      setGoalValues(newValues);
+                    }}
+                  />
+                </div>
               );
             })}
           </form>
 
           <RadarChart
-            width={500}
+            width={600}
             height={500}
             onAxisClick={(event, params) => setRadarClick(params.axisValue)}
             series={[

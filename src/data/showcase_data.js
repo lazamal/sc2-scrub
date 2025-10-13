@@ -21,12 +21,12 @@ export const SHOWCASE_DATA = [
     buttonLink: "http://localhost:5173/ReplayCast",
   },
   {
-    key: "best",
-    title: "Best builds",
+    key: "stats",
+    title: "My stats",
     description:
-      "preparing for a tournement? Get a summary of you best build orders",
+      "preparing for a tournement? Get a your focus on what to improve",
     img: bestImage,
-    buttonLink: "http://localhost:5173/MyBest",
+    buttonLink: "http://localhost:5173/MyStats",
   },
   {
     key: "cheese",

@@ -97,7 +97,7 @@ export default function MyStats() {
             slotProps={{
               legend: {
                 sx: {
-                  fontSize: 20,
+                  fontSize: "20",
                   color: "White",
                 },
               },

@@ -9,7 +9,9 @@ const httpClient = axios.create();
 
 export default function ReplayTab() {
   const [TabResults, setTabResults] = useState([]);
-  const [tabText, setTabText] = useState("");
+  const [tabText, setTabText] = useState(
+    "A variaty of different casting styles for your choice, click below."
+  );
 
   const fetchTabData = () => {
     httpClient.get(`/casting_style_data.json`).then((result) => {

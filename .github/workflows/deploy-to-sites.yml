@@ -1,9 +1,8 @@
-
 name: Deploy static content to Pages
 
-on: 
+on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -22,15 +21,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 24.x ]
+        node-version: [24.x]
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-          cache-dependency-path: './' 
+          cache: "npm"
+          cache-dependency-path: "./"
       - run: npm install
 
       - name: Build static site
@@ -42,11 +41,11 @@ jobs:
         shell: bash
         run: |
           echo "Checking current directory"
-          ls -la 
+          ls -la dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ./dist
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter basename="/sc2-scrub/">
+      <BrowserRouter>
         <Routes>
           {routeArray.map(({ path, element }) => (
             <Route path={path} key={path} element={element} />
